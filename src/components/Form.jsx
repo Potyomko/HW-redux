@@ -4,15 +4,13 @@ import { addContact } from "../redux/slices";
 
 export const Form = () => {
     const dispatch = useDispatch();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    dispatch(addContact({
-        id: nanoid(),
-        name: form.elements.name.value,
-        number: form.elements.number.value,
-    }));
-    form.reset();
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const name = e.currentTarget.elements.name.value;
+      const number = e.currentTarget.elements.number.value;
+      const newContact = { id: nanoid(), name, number };
+      dispatch(addContact(newContact));
+      e.currentTarget.reset();
   };
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
