@@ -6,6 +6,7 @@ import { contactsReducer, filtersReducer } from "./slices"
 const persistConfig = {
     key: 'root',
     storage,
+    blacklist: ['filters'],
 }
 
 const rootReducer = combineReducers({
