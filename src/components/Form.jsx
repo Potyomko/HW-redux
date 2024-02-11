@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { addContact } from "../redux/slices";
+import { addContacts } from "../redux/operetions";
 
 export const Form = () => {
     const dispatch = useDispatch();
@@ -9,11 +9,11 @@ export const Form = () => {
       const name = e.currentTarget.elements.name.value;
       const number = e.currentTarget.elements.number.value;
       const newContact = { id: nanoid(), name, number };
-      dispatch(addContact(newContact));
+      dispatch(addContacts(newContact));
       e.currentTarget.reset();
   };
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={handleSubmit}>
         <label>
           Name
           <input
