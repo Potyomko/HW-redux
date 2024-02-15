@@ -1,4 +1,3 @@
-import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { addContacts } from "../redux/operetions";
 
@@ -8,7 +7,7 @@ export const Form = () => {
       e.preventDefault();
       const name = e.currentTarget.elements.name.value;
       const number = e.currentTarget.elements.number.value;
-      const newContact = { id: nanoid(), name, number };
+      const newContact = { name, number };
       dispatch(addContacts(newContact));
       e.currentTarget.reset();
   };

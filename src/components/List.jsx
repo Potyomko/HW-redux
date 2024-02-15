@@ -5,9 +5,6 @@ import { useEffect } from "react";
 
 export const List = ({contact}) => {
     const dispatch = useDispatch();
-      const handleDelete = (contactId) => {
-        dispatch(deleteContacts(contactId));
-  };
     useEffect(() => {
     dispatch(fetchContacts())
     }, [dispatch])
@@ -20,7 +17,7 @@ export const List = ({contact}) => {
                         <p>
                             {name}: {number}
                         </p>
-                        <button type="button" onClick={() => handleDelete(id)}>
+                        <button type="button" onClick={() => dispatch(deleteContacts(id))}>
                             Delete
                         </button>
                     </li>
