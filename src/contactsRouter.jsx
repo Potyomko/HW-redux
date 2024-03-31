@@ -1,7 +1,7 @@
 import { App } from "components/App";
 import { List } from "components/List";
 import PrivateRoute from "components/PrivateRouter";
-import RestrictedRoute from "components/RestrictedRoute";
+import RestrictedRoute from "components/RestrictedRouters";
 import { Home, Login, Registration } from 'pages';
 import { createBrowserRouter } from "react-router-dom"
 
